@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XGpad", "XGpad\XGpad.csproj", "{A8A89488-B3F1-4EB5-AE9D-1507A8F7D17A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8A89488-B3F1-4EB5-AE9D-1507A8F7D17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A89488-B3F1-4EB5-AE9D-1507A8F7D17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A89488-B3F1-4EB5-AE9D-1507A8F7D17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A89488-B3F1-4EB5-AE9D-1507A8F7D17A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,92 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="XGpad.Resources.Tools.GamepadView">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>  <!-- D-Pad -->
+            <ColumnDefinition Width="*"/>     <!-- Middle -->
+            <ColumnDefinition Width="Auto"/>  <!-- Buttons -->
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>    <!-- Top triggers -->
+            <RowDefinition Height="*"/>       <!-- Main controls -->
+            <RowDefinition Height="Auto"/>    <!-- Bottom (Start/Back) -->
+        </Grid.RowDefinitions>
+
+        <!-- Top Triggers -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Name="LeftTB" HorizontalAlignment="Left">
+            <Button x:Name="ButtonLB" Content="LB" Width="100" Click="ButtonLB_OnClick"/>
+            <Button x:Name="ButtonLT" Content="LT" Height="50" Width="70" Click="ButtonLT_OnClick"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="2" Name="RightTB" HorizontalAlignment="Right">
+            <Button x:Name="ButtonRB" Content="RB" Width="100" Click="ButtonRB_OnClick"/>
+            <Button x:Name="ButtonRT" Content="RT" Height="50" Width="70" Click="ButtonRT_OnClick"/>
+        </StackPanel>
+
+        <!-- D-Pad -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Name="DpadStack" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Button x:Name="ButtonDUp" Content="Dup" />
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ButtonDLeft" Content="Dleft" />
+                <Button x:Name="ButtonDRight" Content="Dright" />
+            </StackPanel>
+            <Button x:Name="ButtonDDown" Content="Ddown" />
+        </StackPanel>
+
+        <!-- Main Buttons -->
+        <StackPanel Grid.Row="1" Grid.Column="2" Name="ButtonsStack" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button x:Name="ButtonY" Content="Y" Click="ButtonY_OnClick"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ButtonX" Content="X" Click="ButtonX_OnClick"/>
+                <Button x:Name="ButtonB" Content="B" Click="ButtonB_OnClick"/>
+            </StackPanel>
+            <Button x:Name="ButtonA" Content="A" Click="ButtonA_OnClick"/>
+        </StackPanel>
+
+        <!-- Start / Back Buttons -->
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ButtonBack" Content="Back" Click="ButtonBack_OnClick"/>
+                <Button x:Name="ButtonStart" Content="Start" Click="ButtonStart_OnClick"/>
+            </StackPanel>
+            <CheckBox Name="RumbleCB" IsChecked="True" Content="ENABLE RUMBLE" IsCheckedChanged="RumbleCB_OnIsCheckedChanged"></CheckBox>
+            <Label Content="Rumble Gain:"></Label>
+            <Slider Name="RumbleSlider" Value="100" Maximum="100" ValueChanged="RumbleSlider_OnValueChanged"></Slider>
+            
+        </StackPanel>
+        <!-- LS Analogues -->
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <!-- Joystick UI in XAML -->
+            
+           
+            <Button Name="ButtonLSY" Content="LS Y" Click="ButtonLSY_OnClick"></Button>
+            <Button Name="ButtonLSX" Content="LS X" Click="ButtonLSX_OnClick" ></Button>
+            <Button Content="LS" Click="ButtonLS_OnClick"></Button>
+            <ToggleSwitch Name="LYinverseSW" Content="INVERSE LY" IsCheckedChanged="LYinverseSW_OnIsCheckedChanged"></ToggleSwitch>
+            <ToggleSwitch Name="LXinverseSW" Content="INVERSE LX" IsCheckedChanged="LXinverseSW_OnIsCheckedChanged"></ToggleSwitch>
+
+        </StackPanel>
+        <!-- RS Analogues -->
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button x:Name="ButtonRSY" Content="RS Y" Click="ButtonRSY_OnClick"></Button>
+            <Button x:Name="ButtonRSX" Content="RS X" Click="ButtonRSX_OnClick"></Button>
+            <Button Content="RS" Click="ButtonRS_OnClick"></Button>
+            <ToggleSwitch Name="RYinverseSW" Content="INVERSE RY" IsCheckedChanged="RYinverseSW_OnIsCheckedChanged"></ToggleSwitch>
+            <ToggleSwitch Name="RXinverseSW" Content="INVERSE RX" IsCheckedChanged="RXinverseSW_OnIsCheckedChanged"></ToggleSwitch>
+        </StackPanel>
+        
+        <!-- Center StackPanel covering the full grid, perfectly centered -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3"
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Name="StartEmuBTN" Content="START XGEPAD" Click="StartEmuBTN_OnClick"/>
+            <Button Name="SaveMappingBTN" Content="SAVE MAPPING" Click="SaveMappingBTN_OnClick"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

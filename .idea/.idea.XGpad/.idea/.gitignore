@@ -1,0 +1,38 @@
+## .NET build outputs
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+## Visual Studio / Rider files
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+
+## NuGet packages
+**/packages/*
+*.nupkg
+
+## Build results
+[Bb]uild/
+msbuild.log
+
+## Temporary files
+*.log
+*.tmp
+*.temp
+
+   # .NET SDK files
+   sdk/
+   shared/
+   packs/
+   dotnet
+
+   # Build outputs
+   **/bin/
+   **/obj/
